@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+div {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    display: grid;
+    border: 1px solid #000;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px 200px 50px;
+    grid-gap: 5px;
+    /* 使用模板区域 */
+    grid-template-areas: 
+        ". h h h h h h h h h h ."
+        "s s c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+}
+
+@media screen and (max-width: 700px) {
+    .wrapper {
+        grid-template-areas:
+            "s s s s s s h h h h h h"
+            "c c c c c c c c c c c c"
+            "f f f f f f f f f f f f";
+    }
+}
+
+.wrapper div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 30px;
+    color: #fff;
+}
+.header {
+    background: red;
+    grid-area: h;
+}
+.sidebar {
+    background: green;
+    grid-area: s;
+}
+.content {
+    background: blue;
+    grid-area: c;
+}
+.footer {
+    background: yellowgreen;
+    grid-area: f;
+}
+</style>
+<body>
+    <div class="wrapper">
+        <div class="header">header</div>
+        <div class="sidebar">sidebar</div>
+        <div class="content">content</div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>

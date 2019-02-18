@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+div {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.wrapper {
+    display: grid;
+    border: 1px solid #000;
+    grid-template-columns: 50px 100px 50px;
+    grid-template-rows: 50px 50px 50px;
+}
+.item1 {
+    background: red;
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+
+    /* span 为这个项目所占的单元格个数 */
+    grid-column: 1 / span 2;
+}
+.item2 {
+    background: green;
+}
+.item3 {
+    background: blue;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    
+}
+.item4 {
+    background: yellowgreen;
+    /* grid-column-start: 2;
+    grid-column-end: 4; */
+
+    /* 下为上的简写 */
+    grid-column: 2 / 4;
+}
+.item5 {
+    background: skyblue;
+}
+.item6 {
+    background: pink;
+}
+</style>
+<body>
+    <div class="wrapper">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+    </div>
+</body>
+</html>
